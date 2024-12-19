@@ -64,9 +64,9 @@ GroundSegmentationServer::GroundSegmentationServer(const rclcpp::NodeOptions &op
   qos.reliability(RMW_QOS_POLICY_RELIABILITY_RELIABLE);
   qos.durability(RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL);
 
-  cloud_publisher_     = create_publisher<sensor_msgs::msg::PointCloud2>("/patchworkpp/cloud", qos);
-  ground_publisher_    = create_publisher<sensor_msgs::msg::PointCloud2>("/patchworkpp/ground", qos);
-  nonground_publisher_ = create_publisher<sensor_msgs::msg::PointCloud2>("/patchworkpp/nonground", qos);
+  cloud_publisher_     = create_publisher<sensor_msgs::msg::PointCloud2>("patchworkpp/cloud", qos);
+  ground_publisher_    = create_publisher<sensor_msgs::msg::PointCloud2>("patchworkpp/ground", qos);
+  nonground_publisher_ = create_publisher<sensor_msgs::msg::PointCloud2>("patchworkpp/nonground", qos);
 
   RCLCPP_INFO(this->get_logger(), "Patchwork++ ROS 2 node initialized");
 }
